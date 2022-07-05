@@ -1,7 +1,7 @@
 /*
 BSD 2-Clause License
 
-Copyright (c) 2021, Jonathan Rousseau <https://github.com/JoRouss>
+Copyright (c) 2022, Brian Moran <https://github.com/Brianmm94>
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -25,17 +25,25 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.ClanEventAttendance;
+package com.ClanAttendance.config;
 
-import lombok.AllArgsConstructor;
-import net.runelite.api.Player;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
-@AllArgsConstructor
-class MemberAttendance
+@Getter
+@RequiredArgsConstructor
+public enum ChatType
 {
-    public Player member;
-    public Integer ticksLate;
-    public Integer tickActivityStarted;
-    public Integer ticksTotal;
-    public boolean isPresent;
+	FRIENDS_CHAT("Friends Chat", 0),
+	CLAN_CHAT("Clan Chat", 1),
+	BOTH_CHATS("Both Chats", 2);
+
+	private final String name;
+	private final int value;
+
+	@Override
+	public String toString()
+	{
+		return name;
+	}
 }

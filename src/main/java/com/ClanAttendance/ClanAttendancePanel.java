@@ -1,7 +1,7 @@
 /*
 BSD 2-Clause License
 
-Copyright (c) 2021, Jonathan Rousseau <https://github.com/JoRouss>
+Copyright (c) 2022, Brian Moran <https://github.com/Brianmm94>
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -25,9 +25,9 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.ClanEventAttendance;
+package com.ClanAttendance;
 
-import com.ClanEventAttendance.config.OutputFormat;
+import com.ClanAttendance.config.OutputFormat;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.PluginPanel;
@@ -39,7 +39,7 @@ import java.awt.datatransfer.*;
 import java.awt.image.BufferedImage;
 
 @Slf4j
-class ClanEventAttendancePanel extends PluginPanel
+class ClanAttendancePanel extends PluginPanel
 {
     private final JButton startButton = new JButton();
     private final JButton copyTextButton = new JButton();
@@ -53,7 +53,7 @@ class ClanEventAttendancePanel extends PluginPanel
     private static final String BTN_COPY_TEXT_TEXT = "Copy to Clipboard";
 
 
-    void init(ClanEventAttendanceConfig config, ClanEventAttendancePlugin plugin)
+    void init(ClanAttendanceConfig config, ClanAttendancePlugin plugin)
     {
         getParent().setLayout(new BorderLayout());
         getParent().add(this, BorderLayout.CENTER);
@@ -176,7 +176,7 @@ class ClanEventAttendancePanel extends PluginPanel
         textLabel.setText(data);
     }
 
-    void updatePanel(ClanEventAttendanceConfig config, ClanEventAttendancePlugin plugin)
+    void updatePanel(ClanAttendanceConfig config, ClanAttendancePlugin plugin)
     {
 
         startButton.setText(plugin.eventRunning ? BTN_STOP_TEXT : BTN_START_TEXT);

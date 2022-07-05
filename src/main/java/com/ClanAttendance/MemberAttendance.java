@@ -1,7 +1,7 @@
 /*
 BSD 2-Clause License
 
-Copyright (c) 2021, Jonathan Rousseau <https://github.com/JoRouss>
+Copyright (c) 2022, Brian Moran <https://github.com/Brianmm94>
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -25,16 +25,17 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.ClanEventAttendance;
+package com.ClanAttendance;
 
-import net.runelite.client.RuneLite;
-import net.runelite.client.externalplugins.ExternalPluginManager;
+import lombok.AllArgsConstructor;
+import net.runelite.api.Player;
 
-public class ClanEventAttendancePluginTest
+@AllArgsConstructor
+class MemberAttendance
 {
-	public static void main(String[] args) throws Exception
-	{
-		ExternalPluginManager.loadBuiltin(ClanEventAttendancePlugin.class);
-		RuneLite.main(args);
-	}
+    public Player member;
+    public Integer ticksLate;
+    public Integer tickActivityStarted;
+    public Integer ticksTotal;
+    public boolean isPresent;
 }

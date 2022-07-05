@@ -1,7 +1,7 @@
 /*
 BSD 2-Clause License
 
-Copyright (c) 2021, Jonathan Rousseau <https://github.com/JoRouss>
+Copyright (c) 2022, Brian Moran <https://github.com/Brianmm94>
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -25,16 +25,16 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.ClanEventAttendance;
+package com.ClanAttendance;
 
 import java.awt.Color;
 
-import com.ClanEventAttendance.config.ChatType;
-import com.ClanEventAttendance.config.OutputFormat;
+import com.ClanAttendance.config.ChatType;
+import com.ClanAttendance.config.OutputFormat;
 import net.runelite.client.config.*;
 
-@ConfigGroup(ClanEventAttendancePlugin.CONFIG_GROUP)
-public interface ClanEventAttendanceConfig extends Config
+@ConfigGroup(ClanAttendancePlugin.CONFIG_GROUP)
+public interface ClanAttendanceConfig extends Config
 {
 	@ConfigSection(
 			name = "Timing Threshold",

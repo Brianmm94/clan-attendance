@@ -1,7 +1,7 @@
 /*
 BSD 2-Clause License
 
-Copyright (c) 2021, Jonathan Rousseau <https://github.com/JoRouss>
+Copyright (c) 2022, Brian Moran <https://github.com/Brianmm94>
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -25,10 +25,10 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.ClanEventAttendance;
+package com.ClanAttendance;
 
-import com.ClanEventAttendance.config.ChatType;
-import com.ClanEventAttendance.config.OutputFormat;
+import com.ClanAttendance.config.ChatType;
+import com.ClanAttendance.config.OutputFormat;
 import com.google.inject.Provides;
 import java.util.ArrayList;
 import java.util.Map;
@@ -61,11 +61,11 @@ import java.util.concurrent.TimeUnit;
 
 @Slf4j
 @PluginDescriptor(
-	name = "Clan Event Attendance",
+	name = "Clan Attendance",
 	description = "Tracks clan attendance and time spent at events.",
-	tags = {"clan", "event", "attendance", "time"}
+	tags = {"clan", "event", "attendance", "time", "elysium"}
 )
-public class ClanEventAttendancePlugin extends Plugin
+public class ClanAttendancePlugin extends Plugin
 {
 	@Inject
 	private ClientToolbar clientToolbar;
@@ -74,9 +74,9 @@ public class ClanEventAttendancePlugin extends Plugin
 	private Client client;
 
 	@Inject
-	private ClanEventAttendanceConfig config;
+	private ClanAttendanceConfig config;
 
-	private ClanEventAttendancePanel panel;
+	private ClanAttendancePanel panel;
 	private NavigationButton navButton;
 
 	private int eventStartedAt;
@@ -95,23 +95,23 @@ public class ClanEventAttendancePlugin extends Plugin
 
 	private final ArrayList<String> ClanMembers = new ArrayList<>();
 
-	static final String CONFIG_GROUP = "ClanEventAttendance";
+	static final String CONFIG_GROUP = "ClanAttendance";
 
 	@Provides
-	ClanEventAttendanceConfig provideConfig(ConfigManager configManager)
+    ClanAttendanceConfig provideConfig(ConfigManager configManager)
 	{
-		return configManager.getConfig(ClanEventAttendanceConfig.class);
+		return configManager.getConfig(ClanAttendanceConfig.class);
 	}
 
 	@Override
 	protected void startUp()
 	{
-		panel = injector.getInstance(ClanEventAttendancePanel.class);
+		panel = injector.getInstance(ClanAttendancePanel.class);
 
 		final BufferedImage icon = ImageUtil.loadImageResource(getClass(), "panel_icon.png");
 
 		navButton = NavigationButton.builder()
-				.tooltip("Clan Event Attendance")
+				.tooltip("Clan Attendance")
 				.icon(icon)
 				.priority(5)
 				.panel(panel)
